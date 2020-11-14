@@ -25,5 +25,10 @@
 </div>
 </div>
 
+<div class="btn-container">
+    <button type="button" class="btn btn-primary btn-sm prevBtn">Prev</button>
+    <button type="button" class="btn btn-primary btn-sm nextBtn">Next</button>
+</div>
+
 </body>
 </html>
