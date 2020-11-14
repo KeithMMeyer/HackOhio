@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Upload</a>
+              <a class="nav-link" href="/HackOhio/upload.php">Upload</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/HackOhio/web/viewer.php">Highlight</a>

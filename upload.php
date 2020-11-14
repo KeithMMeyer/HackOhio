@@ -17,9 +17,11 @@
     float: right;
 }
 </style>
+<?php include 'includes/include_BS.php';?>
 
 </head>
 <body>
+<?php include 'includes/include_nav.php';?>
     <div>
         <br>
         <br>
