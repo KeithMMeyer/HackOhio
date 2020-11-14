@@ -36,11 +36,13 @@ See https://github.com/adobe-type-tools/cmap-resources
         <link rel="resource" type="application/l10n" href="locale/locale.properties">
         <script src="../build/pdf.js"></script>
 
-
         <script src="viewer.js"></script>  
+
+        <?php include '../includes/include_BS.php';?>
 
     </head>
     <body tabindex="1" class="loadingInProgress">
+    <?php include '../includes/include_nav.php';?>
         <div class="container" style="height:100%; max-width:100%;">
             <div class="row" style="height:100%">
                 <div class="col-sm">
