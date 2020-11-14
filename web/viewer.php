@@ -42,7 +42,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 
     </head>
     <body tabindex="1" class="loadingInProgress">
-    <?php include '../includes/include_nav.php';?>
+        <?php include '../includes/include_nav.php';?>
         <div class="container" style="height:100%; max-width:100%;">
             <div class="row" style="height:100%">
                 <div class="col-sm">
@@ -395,7 +395,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     </div>
 <div class="col-sm">
     <div style="height: 100%; width: 100%; color:white;">
-        <textarea style="height: 100%; width: 100%; resize: none; padding:5%"></textarea>
+        <textarea id="documentArea" style="height: 100%; width: 100%; resize: none; padding:5%"></textarea>
     </div>
 </div>
 </div>
@@ -403,8 +403,51 @@ See https://github.com/adobe-type-tools/cmap-resources
 
 <div id="printContainer"></div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+    var pdfViewer = document.getElementById("viewer");
+    
+    function isOrContains(node, container) {
+        while (node) {
+            if (node === container) {
+                return true;
+            }
+            node = node.parentNode;
+        }
+        return false;
+    }
+
+    function getSelectionText() {
+        var text = null;
+        if (window.getSelection) {
+            text = window.getSelection();
+            if (text.rangeCount > 0) {
+                for (var i = 0; i < text.rangeCount; ++i) {
+                    if (!isOrContains(text.getRangeAt(i).commonAncestorContainer, pdfViewer)) {
+                        return "";
+                    }
+                }
+                return text.toString();
+            }
+        } else if ( (text = document.selection) && text.type != "Control") {
+            if(isOrContains(text.createRange().parentElement(), pdfViewer)){
+                text.createRange().text;
+            }
+        }
+        return "";
+    }
+
+    function doSomethingWithSelectedText() {
+        var selectedText = getSelectionText();
+        if (selectedText) {
+            $("#documentArea").append("\n" + selectedText + "\n");
+            //alert("Got selected text " + selectedText);
+        }
+    }
+
+    document.onmouseup = doSomethingWithSelectedText;
+    document.onkeyup = doSomethingWithSelectedText;
+</script>
+
 </body>
 </html>
 

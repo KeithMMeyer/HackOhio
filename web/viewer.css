@@ -60,7 +60,7 @@
 }
 
 .textLayer ::selection {
-  background: rgba(0, 0, 255, 1);
+  background: yellow;
 }
 
 .textLayer .endOfContent {
