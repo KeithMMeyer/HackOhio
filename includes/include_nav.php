@@ -1,3 +1,4 @@
+<div style="padding-bottom: 15px;">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/HackOhio/index.php">
             <img src="/HackOhio/img/logo.png" width="40" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -23,3 +24,4 @@
           </span>
         </div>
       </nav>
+</div>
