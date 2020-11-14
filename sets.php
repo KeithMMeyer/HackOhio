@@ -16,7 +16,7 @@
             }
         </style>
 
-        <title>QuickCard</title>
+        <title>QuickCard - Sets</title>
         <?php include 'includes/include_BS.php';?>
     </head>
     <body>
