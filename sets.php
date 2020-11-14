@@ -50,15 +50,36 @@
                 card.def = "Def" + x;
                 cardList.push(card);
             }
+            
+            function updateCard(index){
+                cardList[index].term = $('#term' + index).html();
+                cardList[index].def = $('#def' + index).html();
+            }
+            
+            function updateLast(index){
+                //adds new and stuff
+            }
+            
+            function newCard(term, def, index){
+                let element = "<div class='card-group'><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable onblur=updateCard('" + index + "') id='term" + index + "'>" + term + "</p></div></div><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable onblur=updateCard('" + index + "') id='def" + index + "'>" + def + "</p></div></div></div>";
+                //$("#listContainer").append(element);
+                return element;
+            }
+            
+            function lastCard(){
+                let element = newCard("Type to add a new card.", "Type to add a new card.", cardList.length);
+                
+                $("#listContainer").append(element);
+            }
 
             function listCreationFunction(card, index){
-                let element = "<div class='card-group'><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable id='term" + index + "'>" + card.term + "</p></div></div><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable id='def" + index + "'>" + card.def + "</p></div></div></div>";
+                let element = newCard(card.term, card.def, index);
                 $("#listContainer").append(element);
-                $('.term' + index).blur(updateCard(id));
             }
 
             // page code
             cardList.forEach(listCreationFunction);
+            
 
         </script>
     </body>
