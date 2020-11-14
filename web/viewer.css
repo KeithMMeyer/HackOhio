@@ -417,13 +417,13 @@ html {
   height: 100%;
   width: 100%;
   /* Font size is needed to make the activity bar the correct size. */
-  font-size: 10px;
+  /*font-size: 10px;*/
 }
 
 body {
   height: 100%;
   width: 100%;
-  background-color: rgba(64, 64, 64, 1);
+  background-color: rgba(64, 64, 64, 1) !important;
   background-image: url(images/texture.png);
 }
 
