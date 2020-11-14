@@ -12,22 +12,32 @@
 <body>
 <?php include 'includes/include_nav.php';?>
 
-<div class="card-container">
-<div class="flip-card">
-    <div class="flip-card-inner">
-        <div class="flip-card-front">
-            <h1>Front</h1>
+<a href="sets.php"><button type="button" class="btn btn-back btn-primary btn-md">< Back to Sets</button></a>
+<h1>Set Name</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-primary btn-sm btn-prev"><</button>
         </div>
-        <div class="flip-card-back">
-            <h1>Back</h1>
+        <div class="col-8">
+            <div class="card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h1>Front</h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Back</h1>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary btn-sm btn-next">></button>
         </div>
     </div>
-</div>
-</div>
-
-<div class="btn-container">
-    <button type="button" class="btn btn-primary btn-sm prevBtn">Prev</button>
-    <button type="button" class="btn btn-primary btn-sm nextBtn">Next</button>
 </div>
 
 </body>

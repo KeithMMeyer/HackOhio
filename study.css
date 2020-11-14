@@ -1,27 +1,33 @@
+.container {
+    margin: auto;
+    width: 100%;
+}
+
 .card-container {
     margin: auto;
-    width: 80%;
-    padding: 5px;
+    width: 100%;
+    height: 100%;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
+.btn-back {
+  float: left;
+  margin: 10px;
 }
 
-.btn {
-  margin: 250px;
-  padding: 10px;
+.btn-next {
+  margin-left: -25px;
+}
+
+.btn-prev {
+  float:right;
+  margin-right: -25px;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     background-color: transparent;
+    font-size: 30px;
     margin: auto;
-    width: 600px;
-    height: 400px;
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
@@ -65,3 +71,33 @@
     color: #e2e2e2;
     transform: rotateY(180deg);
   }
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .flip-card{
+    height: 200px;
+  }
+  .btn-prev, .btn-next {
+    height: 200px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 600px) {
+  .flip-card{
+    height: 300px;
+  }
+  .btn-prev, .btn-next {
+    height: 300px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) {
+  .flip-card{
+    height: 400px;
+  }
+  .btn-prev, .btn-next {
+    height: 400px;
+  }
+}
