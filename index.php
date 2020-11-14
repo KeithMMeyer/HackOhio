@@ -24,7 +24,7 @@
 <br>
 <div class= "container">
     <div class="col-md-12 text-center">
-<a class="btn btn-info" href="#" role="button">Upload your first set</a>
+<a class="btn btn-info" href="upload.php" role="button">Upload your first set</a>
 </div>
 </div>
 </div>
