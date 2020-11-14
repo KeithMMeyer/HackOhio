@@ -18,7 +18,7 @@
 }
 </style>
 <?php include 'includes/include_BS.php';?>
-
+<title>QuickCard - Upload</title>
 </head>
 <body>
 <?php include 'includes/include_nav.php';?>

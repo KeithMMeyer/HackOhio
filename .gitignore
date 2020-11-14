@@ -1,4 +1,5 @@
 *.pdf
 Python-OCR/result
-aws.php
+aws-textract.php
+aws-s3.php
 test.png
