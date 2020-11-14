@@ -9,6 +9,11 @@
             .card-group{
                 margin-bottom: 8px;
             }
+            .card-editable {
+                margin: -1.25rem !important;
+                padding: 1.25rem;
+
+            }
         </style>
 
         <title>QuickCard</title>
@@ -26,39 +31,35 @@
             </ul>
         </div>
 
-        <div class="container">
+        <div class="container" style="margin-top:32px">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm" >
                     <h1>Set Name</h1>
-                    <div class="card-group">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-group">
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Type here to add a term.</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <p class="card-text">Type here to add a definition.</p>
-                                <p class="card-text">
-                            </div>
-                        </div>
+                    <div class="col-sm" id="listContainer">
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            //set up
+            //var card = {term:"Term", def:"Definition"};
+            var cardList = [];
+            for(let x = 0; x < 10; x++){
+                let card = {};
+                card.term = "Term" + x;
+                card.def = "Def" + x;
+                cardList.push(card);
+            }
 
+            function listCreationFunction(card, index){
+                let element = "<div class='card-group'><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable id='term" + index + "'>" + card.term + "</p></div></div><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable id='def" + index + "'>" + card.def + "</p></div></div></div>";
+                $("#listContainer").append(element);
+                $('.term' + index).blur(updateCard(id));
+            }
+
+            // page code
+            cardList.forEach(listCreationFunction);
+
+        </script>
     </body>
 </html>
