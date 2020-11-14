@@ -35,6 +35,9 @@
             <div class="row">
                 <div class="col-sm" >
                     <h1>Set Name</h1>
+                    <div class="col-sm" style="padding-bottom: 15px;">
+                    <a href="study.php"><button type="button" class="btn btn-back btn-primary btn-md">Study Set ></button></a>
+                </div>
                     <div class="col-sm" id="listContainer">
                     </div>
                 </div>
