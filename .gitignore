@@ -1,5 +1,6 @@
 *.pdf
 Python-OCR/result
 aws-textract.php
+aws-textract2.php
 aws-s3.php
 test.png
