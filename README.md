@@ -1,0 +1,5 @@
+# HackOhio
+
+## Group Clickbait
+
+### QuickCard

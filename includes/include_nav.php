@@ -12,10 +12,10 @@
               <a class="nav-link" href="#">Upload</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Highlight</a>
+              <a class="nav-link" href="/hackohio/web/viewer.php">Highlight</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">My Sets</a>
+              <a class="nav-link" href="/hackohio/sets.php">My Sets</a>
             </li>
           </ul>
           <span class="navbar-text">
