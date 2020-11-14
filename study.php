@@ -18,7 +18,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <button type="button" class="btn btn-primary btn-sm btn-prev"><</button>
+            <button type="button" class="btn btn-primary btn-sm btn-prev" onclick="findPrev()"><</button>
         </div>
         <div class="col-8">
             <div class="card-container">
@@ -35,10 +35,66 @@
             </div>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-primary btn-sm btn-next">></button>
+            <button type="button" class="btn btn-primary btn-sm btn-next" onclick="findNext()">></button>
         </div>
     </div>
 </div>
+
+<script>
+    var currentCard = 0;
+//set up
+    var cardList = [];
+    for(let x = 0; x < 10; x++){
+        let card = {};
+        card.term = "Term" + x;
+        card.def = "Def" + x;
+        cardList.push(card);
+    }
+
+    cardSwitch(0);
+    checkToggle();
+
+    function cardSwitch(index) {
+        $(".flip-card-front").html(cardList[index].term);
+        $(".flip-card-back").html(cardList[index].def);
+    }
+
+    function findNext() {
+        checkToggle();
+        if (currentCard < cardList.length - 1) {
+            currentCard++;
+            cardSwitch(currentCard);
+        }
+        checkToggle();
+    }
+
+    function findPrev() {
+        checkToggle();
+        if (currentCard > 0) {
+            currentCard--;
+            cardSwitch(currentCard);
+        }
+        checkToggle();
+    }
+
+    function checkToggle() {
+        next = document.querySelector('.btn-next');
+        prev = document.querySelector('.btn-prev');
+
+        if (currentCard == 0) {
+            prev.classList.add('disabled');
+        }
+        if (currentCard > 0) {
+            prev.classList.remove('disabled')
+        }
+        if (currentCard == cardList.length - 1) {
+            next.classList.add('disabled');
+        }
+        if (currentCard < cardList.length - 1) {
+            next.classList.remove('disabled')
+        }
+    }
+</script>
 
 </body>
 </html>
