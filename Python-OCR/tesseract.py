@@ -122,7 +122,7 @@ def process_text_analysis(bucket, document):
 
 def main():
 
-    bucket = 'hackohio-pdfstore'
+    bucket = 'hackohio-pdf'
     document = 'test.png'
     block_count=process_text_analysis(bucket,document)
     print("Blocks detected: " + str(block_count))
