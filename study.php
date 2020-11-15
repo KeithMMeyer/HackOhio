@@ -32,10 +32,10 @@
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <h1>Front</h1>
+                        <h1>Empty</h1>
                     </div>
                     <div class="flip-card-back">
-                        <h1>Back</h1>
+                        <h1>Empty</h1>
                     </div>
                 </div>
             </div>
@@ -47,16 +47,32 @@
     </div>
 </div>
 
+<?php
+    // php setID variable
+    $setID = 1;
+    $cardArr = [];
+
+    $sql = "SELECT cardQuestion, cardAnswer FROM card WHERE setID = " . $setID .";";
+
+    if ($result = mysqli_query($conn, $sql)) {
+    // Fetch one and one row
+    while ($row = mysqli_fetch_row($result)) {
+        $cardArr[$row[0]] = $row[1];
+    }
+    mysqli_free_result($result);
+    }
+?>
+
 <script>
     var currentCard = 0;
-//set up
+    var dbCards = <?php echo json_encode($cardArr); ?>;
     var cardList = [];
-    for(let x = 0; x < 10; x++){
+    $.each(dbCards, function(key, value) {
         let card = {};
-        card.term = "Term" + x;
-        card.def = "Def" + x;
+        card.term = key;
+        card.def = value;
         cardList.push(card);
-    }
+    });
 
     cardSwitch(0);
     checkToggle();

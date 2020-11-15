@@ -404,6 +404,11 @@ See https://github.com/adobe-type-tools/cmap-resources
 <div id="printContainer"></div>
 
 <script>
+    <?php
+        echo 'var fileName = "' . '../uploads/' . $_SESSION["fileName"] . '";'; 
+    ?>
+    let file = "";
+    PDFViewerApplication.open(file)
     var pdfViewer = document.getElementById("viewer");
     
     function isOrContains(node, container) {
