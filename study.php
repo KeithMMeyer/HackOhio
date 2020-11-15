@@ -12,10 +12,16 @@
 <body>
 <?php include 'includes/include_nav.php';?>
 
-<a href="sets.php"><button type="button" class="btn btn-back btn-primary btn-md">< Back to Sets</button></a>
+<div class = "container">
+<div class = "row">
 <h1>Set Name</h1>
-
-<div class="container" style="padding: 5%;">
+</div>
+<div class = "row">
+<a href="sets.php"><button type="button" class="btn btn-back btn-primary btn-md">< Back to Sets</button></a>
+</div>
+</div>
+<br>
+<div class="container">
     <div class="row">
         <div class="col">
             <button type="button" class="btn btn-primary btn-sm btn-prev" onclick="findPrev()"><</button>
@@ -74,7 +80,7 @@
             currentCard--;
             cardSwitch(currentCard);
         }
-        checkToggle();
+        checkToggle()
     }
 
     function checkToggle() {

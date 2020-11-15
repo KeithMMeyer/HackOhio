@@ -21,7 +21,7 @@
     </head>
     <body>
         <?php include 'includes/include_nav.php';?>
-        <div style=float:left;width 20%>
+        <div style="float:left; margin-right: 15px;">
             <ul class="list-group">
                 <li class="list-group-item">   Set 1   </li>
                 <li class="list-group-item">   Set 2   </li>
@@ -31,17 +31,22 @@
             </ul>
         </div>
 
-        <div class="container" style="margin-top:32px">
-            <div class="row">
-                <div class="col-sm" >
+        <div class="container">
+            <div class="col-sm" >
+                <div class = "row">
                     <h1>Set Name</h1>
-                    <div class="col-sm" style="padding-bottom: 15px;">
-                    <a href="study.php"><button type="button" class="btn btn-back btn-primary btn-md">Study Set ></button></a>
                 </div>
+                <div class = "row">
+                    <a href="study.php"><button type="button" class="btn btn-back btn-primary btn-md">Study this Set ></button></a>
+                </div>
+            </div>
+            <br>
+            <div class = "row">
                     <div class="col-sm" id="listContainer">
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <script>
             //set up
