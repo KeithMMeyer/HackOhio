@@ -11,13 +11,7 @@
 </head>
 <body>
 <?php include 'includes/include_nav.php';?>
-
-<?php
-include 'include/db_connection.php';
-$conn = OpenCon();
-echo "Connected Successfully";
-CloseCon($conn);
-?>
+<?php include 'include/db_connection.php';?>
 
 <div class = "container">
 <div class = "row">

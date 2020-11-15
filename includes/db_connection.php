@@ -1,18 +1,16 @@
 <?php
-    function OpenCon()
-    {
-        $dbhost = "localhost";
-        $dbuser = "root";
-        $dbpass = "&9UPjB4pz#H";
-        $db = "quickcard";
-        $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
-        
-        return $conn;
-    }
-    
-    function CloseCon($conn)
-    {
-        $conn -> close();
-    }
-   
+  error_reporting(E_ALL); 
+  ini_set('display_errors', 1);
+  $servername = "localhost";
+  $username = "root";
+  $password = "password";
+  $db_name = "quickcard";
+
+  // Create connection
+  $conn = new mysqli_connect($servername, $username, $password, $db_name);
+
+  // Check connection
+  if ($conn->connect_error){
+    die("Connection failed: " . $conn->connect_error);
+  }
 ?>
