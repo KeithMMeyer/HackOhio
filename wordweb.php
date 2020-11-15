@@ -12,10 +12,10 @@
 <body>
 <?php include 'includes/include_nav.php';?>
 
-<div class="container">
+<div class="container" style="padding: 5%;">
 	<h2> Words Choices </h2>
 	<br>
-	<div id="cloud" style="text-align: center; font-size: 1.8em;">
+	<div id="cloud" style="text-align: center; font-size: 1.8em; padding: 2%; border: 3px solid #2E0854;"">
 	</div>
 </div>
 
@@ -26,14 +26,14 @@
 	var chosenWords = [];
 
 	for (var i = 0; i < words.length; i++) {
-		document.getElementById("cloud").innerHTML += "<p class='aWord' id='word" + i + "' style='display: inline-block; ' onclick='chooseWord(" + i + ")'>" + words[i] + "&nbsp;</p>";
+		document.getElementById("cloud").innerHTML += "<p class='aWord' id='word" + i + "' style='display: inline-block; ' onclick='chooseWord(" + i + ")'>&nbsp;" + words[i] + "&nbsp;</p>";
 	}
 	
 	function chooseWord(wordId) {
 		let word = words[wordId];
 			if (!chosenWords.includes(word)) {
 				chosenWords.push(word);
-				document.getElementById("word" + wordId).style.backgroundColor = "#2E0854";
+				document.getElementById("word" + wordId).style.backgroundColor = "#fc6c85";
 				document.getElementById("word" + wordId).style.color = "white";
 				document.getElementById("word" + wordId).style.fontWeight = "bold";
 			} else {
