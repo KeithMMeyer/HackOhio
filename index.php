@@ -43,9 +43,8 @@
 </body>
 </html>
 <style>
-            <style>
 	html {
-  height:100% !important;
+  height:100%;
 }
 
 body {

@@ -1,2 +1,3 @@
 # QuickCard - HackOhio - Group ClickBait
 In an increasingly digital age, the need for online tools and rich digital learning environments is important. Our project called QuickCard is an engaging study tool for the modern student. Students can upload the syllabus from their class and using OCR technology we can pull the important words right off the page and into a generated study quiz. Users can customize the results of their generated quiz to their liking as well as use our highlighting tool, users can upload a PDF and highlight their notes and automatically create notecards as they go. 
+[QuickCard](http://hackohio-teamclickbait.fish)

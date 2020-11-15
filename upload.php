@@ -15,7 +15,19 @@ $uploadOk = 0;
 }
 */
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <?php include 'includes/include_BS.php';?>
+        <title>QuickCard - Upload</title>
+        <style>
+	html {
+  height:100%;
+}
 
+body {
+  background: linear-gradient(324deg, rgba(36,34,84,0.5) 0%, rgba(50,75,154,0.5) 35%, rgba(228,98,112,0.5) 100%);
+}
 </style>
 </head>
 <body>
@@ -68,19 +80,3 @@ if ($uploadOk == 0) {
     </div>
 </body>
 </html>
-
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <?php include 'includes/include_BS.php';?>
-        <title>QuickCard - Upload</title>
-        <style>
-            <style>
-	html {
-  height:100%;
-}
-
-body {
-  background: linear-gradient(324deg, rgba(36,34,84,0.5) 0%, rgba(50,75,154,0.5) 35%, rgba(228,98,112,0.5) 100%);
-}

@@ -80,6 +80,8 @@
                 card.def = dbCardDefs[key];
                 cardList.push(card);
             });
+
+            var setId = <?php echo json_encode($setID); ?>;
             
             function updateCard(index){
                 if(index=="temp") return updateLast("temp");
@@ -87,6 +89,7 @@
                     "term":$("#term"+index).html(),
                     "id":index,
                     "def":$("#def"+index).html(),
+                    "set":setId
                 }
                 console.log(info);
                 var infoStr = JSON.stringify(info);
