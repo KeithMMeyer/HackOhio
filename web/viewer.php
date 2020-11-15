@@ -43,7 +43,7 @@ See https://github.com/adobe-type-tools/cmap-resources
     </head>
     <body tabindex="1" class="loadingInProgress">
         <?php include '../includes/include_nav.php';?>
-        <div class="container" style="height:100%; max-width:100%;">
+        <div class="container" style="height:90%; max-width:100%;">
             <div class="row" style="height:100%">
                 <div class="col-sm">
                     <div id="outerContainer">
