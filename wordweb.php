@@ -65,15 +65,14 @@ for (let i = 0; i < tuples.length; i++) {
 
     // do something with key and value
 }
+	let chosenWords = [];
 
-	var chosenWords = [];
-
-	for (var i = 0; i < words.length; i++) {
-		document.getElementById("cloud").innerHTML += "<p class='aWord' id='word" + i + "' style='display: inline-block; cursor: pointer;' onclick='chooseWord(" + i + ")'>&nbsp;" + words[i] + "&nbsp;</p>";
+	for (var i = 0; i < tuples.length; i++) {
+		document.getElementById("cloud").innerHTML += "<p class='aWord' id='word" + i + "' style='display: inline-block; cursor: pointer;' onclick='chooseWord(" + i + ")'>&nbsp;" + tuples[i][0] + "&nbsp;</p>";
 	}
 	
 	function chooseWord(wordId) {
-		let word = words[wordId];
+		let word = tuples[wordId][0];
 			if (!chosenWords.includes(word)) {
 				chosenWords.push(word);
 				document.getElementById("word" + wordId).style.backgroundColor = "#fc6c85";

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <!--
 Copyright 2012 Mozilla Foundation
@@ -402,12 +403,13 @@ See https://github.com/adobe-type-tools/cmap-resources
 </div>
 
 <div id="printContainer"></div>
-
+<?php
+    $sessionPath = "../uploads/" . $_SESSION["fileName"];
+    echo $sessionPath;
+?>
 <script>
-    <?php
-        echo 'var fileName = "' . '../uploads/' . $_SESSION["fileName"] . '";'; 
-    ?>
-    let file = "";
+$(document).ready(function() {
+    let file = <?php echo json_encode($sessionPath);?>;
     PDFViewerApplication.open(file)
     var pdfViewer = document.getElementById("viewer");
     
@@ -451,6 +453,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 
     document.onmouseup = doSomethingWithSelectedText;
     document.onkeyup = doSomethingWithSelectedText;
+});
 </script>
 
 </body>

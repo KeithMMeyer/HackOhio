@@ -53,36 +53,61 @@
 <?php
     // php setID variable
     $setID = 1;
-    $cardArr = [];
+    $cardTerms = [];
+    $cardDefs = [];
 
-    $sql = "SELECT cardQuestion, cardAnswer FROM card WHERE setID = " . $setID .";";
+    $sql = "SELECT cardId, cardQuestion, cardAnswer FROM card WHERE setID = " . $setID .";";
 
     if ($result = mysqli_query($conn, $sql)) {
     // Fetch one and one row
     while ($row = mysqli_fetch_row($result)) {
-        $cardArr[$row[0]] = $row[1];
+        $cardTerms[$row[0]] = $row[1];
+        $cardDefs[$row[0]] = $row[2];
+
     }
     mysqli_free_result($result);
     }
 ?>
         <script>
             //set up
-            var dbCards = <?php echo json_encode($cardArr); ?>;
+            var dbCardTerms = <?php echo json_encode($cardTerms); ?>;
+            var dbCardDefs = <?php echo json_encode($cardDefs); ?>;
             var cardList = [];
-            $.each(dbCards, function(key, value) {
+            $.each(dbCardTerms, function(key, value) {
                 let card = {};
-                card.term = key;
-                card.def = value;
+                card.id = key;
+                card.term = value;
+                card.def = dbCardDefs[key];
                 cardList.push(card);
             });
             
             function updateCard(index){
-                cardList[index].term = $('#term' + index).html();
-                cardList[index].def = $('#def' + index).html();
+                var info = [ 
+                    index,
+                    cardList[index].term,
+                    cardList[index].def
+                ]
+                var infoStr = JSON.stringify(info);
+                $.ajax({
+                    type: "POST",
+                    url: "",
+                    data: {info : infoStr}, 
+                    cache: false,
+                    success: function(response){
+                        //cardList[index].term = $('#term' + index).html();
+                        //cardList[index].def = $('#def' + index).html();
+                    }
+                });
+
+                <?php
+                 $info = json_decode(stripslashes($_POST['info']));
+                 var_dump($info);
+                //$sql = "UPDATE card SET cardQuestion = ";
+                //$result = mysqli_query($conn, $sql);
+                ?>
             }
             
             function updateLast(index){
-                //adds new and stuff
             }
             
             function newCard(term, def, index){
@@ -97,8 +122,8 @@
                 $("#listContainer").append(element);
             }
 
-            function listCreationFunction(card, index){
-                let element = newCard(card.term, card.def, index);
+            function listCreationFunction(card){
+                let element = newCard(card.term, card.def, card.id);
                 $("#listContainer").append(element);
             }
 
