@@ -12,17 +12,28 @@
 <body>
 <?php include 'includes/include_nav.php';?>
 
+
+
 <div class="container">
 <h1>Welcome to QuickCard</h1>
 <hr>
 
-<h3> What We Do</h3>
-<p>We make flashcards for you. You just highlight the relvent content</p>
-<br>
+<div class="row">
+  <div class="col-6 col-sm-6">
+    <h3> What We Do</h3>
+    <p>We make flashcards for you. You just highlight the relvent content</p>
+    <br>
+    <h3>Who We Are</h3>
+    <p>We are a group college pauper looking to make good content for you</p>
+    <br>
+  </div>
+  <div class="col-6 col-sm-6">
+    <img src="./img/logo.png" class="rounded float-right border-dark" alt="...">
+  </div>
+</div>
 
-<h3>Who We Are</h3>
-<p>We are a group college pauper looking to make good content for you</p>
-<br>
+
+
 <div class= "container">
     <div class="col-md-12 text-center">
 <a class="btn btn-info" href="upload.php" role="button">Upload your first set</a>

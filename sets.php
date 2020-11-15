@@ -93,6 +93,7 @@
 
             // page code
             cardList.forEach(listCreationFunction);
+            lastCard();
             
 
         </script>

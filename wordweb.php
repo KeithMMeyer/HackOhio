@@ -20,9 +20,37 @@
 </div>
 
 <script>
+// get words from textract or upload
 	var words = [
-"minute","miss","mission","model","modern","moment","money","month","more","morning","most","mother","mouth","move","movement","movie","Mr","Mrs","much","music","must","my","myself","name","nation","national","natural","nature","near","nearly","necessary","need","network","never","news","newspaper","next","nice","night","no","none","nor","north","not","note","nothing","notice","now"
+"minute","miss","mission","model","modern","moment","money","month","more","morning","most","mother","mouth","move","movement","movie","Mr","Mrs","much","music","must","my","myself","name","nation","national","natural","nature","near","nearly","necessary","need","network","never","news","newspaper","next","nice","night","no","none","now","north","not","note","nothing","notice","now", "now", "now", "note"
 	];
+
+	// get and store frequencies
+	var frequencies = {};
+	for (var i = 0; i < words.length; i++) {
+		if (words[i] in frequencies) {
+			frequencies[words[i]] += 1;
+		} else {
+			console.log("CHECK");
+			frequencies[words[i]] = 1;
+		}
+	}
+
+	var sortedFred = sortAssoc(frequencies);
+	function sortAssoc(aInput)
+		{
+		var aTemp = [];
+		for (var sKey in aInput)
+		aTemp.push([sKey, aInput[sKey]]);
+		aTemp.sort(function () {return arguments[0][1] < arguments[1][1]});
+
+		var aOutput = [];
+		for (var nIndex = aTemp.length-1; nIndex >=0; nIndex--)
+		aOutput[aTemp[nIndex][0]] = aTemp[nIndex][1];
+
+		return aOutput;
+		}
+
 	var chosenWords = [];
 
 	for (var i = 0; i < words.length; i++) {

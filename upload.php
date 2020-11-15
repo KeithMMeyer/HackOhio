@@ -1,3 +1,5 @@
+<?php session_start();?>
+
 <?php
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -47,6 +49,8 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
+
+echo $_FILES["fileToUpload"]["tmp_name"]
 ?>
 
 <!DOCTYPE html>
