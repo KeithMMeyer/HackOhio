@@ -12,6 +12,13 @@
 <body>
 <?php include 'includes/include_nav.php';?>
 
+<?php
+include 'include/db_connection.php';
+$conn = OpenCon();
+echo "Connected Successfully";
+CloseCon($conn);
+?>
+
 <div class = "container">
 <div class = "row">
 <h1>Set Name</h1>
