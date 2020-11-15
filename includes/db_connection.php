@@ -1,13 +1,13 @@
 <?php
   error_reporting(E_ALL); 
   ini_set('display_errors', 1);
-  $servername = "localhost";
-  $username = "root";
+  $servername = "127.0.0.1";
+  $username = "quick";
   $password = "password";
   $db_name = "quickcard";
 
   // Create connection
-  $conn = new mysqli_connect($servername, $username, $password, $db_name);
+  $conn = new mysqli($servername, $username, $password, $db_name);
 
   // Check connection
   if ($conn->connect_error){

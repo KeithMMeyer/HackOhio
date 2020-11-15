@@ -17,11 +17,11 @@
 <hr>
 
 <h3> What We Do</h3>
-<p>Eius dicta sit fugiat sunt non. Rerum excepturi sint hic odio odit tempora reprehenderit. Ut repellendus eos voluptates voluptatem natus consequatur aut. Doloribus enim autem eligendi optio. Eveniet architecto sapiente saepe molestiae iste. Perspiciatis voluptatum</p>
+<p>We make flashcards for you. You just highlight the relvent content</p>
 <br>
 
 <h3>Who We Are</h3>
-<p>Eius dicta sit fugiat sunt non. Rerum excepturi sint hic odio odit tempora reprehenderit. Ut repellendus eos voluptates voluptatem natus consequatur aut. Doloribus enim autem eligendi optio. Eveniet architecto sapiente saepe molestiae iste. Perspiciatis voluptatum</p>
+<p>We are a group college pauper looking to make good content for you</p>
 <br>
 <div class= "container">
     <div class="col-md-12 text-center">

@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php include 'includes/include_nav.php';?>
-<?php include 'include/db_connection.php';?>
+<?php include 'includes/db_connection.php';?>
 
 <div class = "container">
 <div class = "row">

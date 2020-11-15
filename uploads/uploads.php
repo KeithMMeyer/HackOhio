@@ -1,5 +1,5 @@
 <?php
-$target_dir = "uploads/";
+$target_dir = "./";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -48,26 +48,3 @@ if ($uploadOk == 0) {
   }
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.792.0.min.js"></script>
-        <?php include 'includes/include_BS.php';?>
-        <title>QuickCard - Upload</title>
-    </head>
-    <body>
-        <?php include 'includes/include_nav.php';?>
-        <div class="container">
-            <div class="col-sm" >
-                <div class = "row">
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-  Select image to upload:
-  <input type="file" name="fileToUpload" id="fileToUpload">
-  <input class="btn btn-primary" type="submit" value="Upload Image" name="submit">
-</form>
-                            </div>
-                            </div>
-                            </div>
-    </body>
-</html>
