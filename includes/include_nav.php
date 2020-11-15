@@ -13,12 +13,6 @@
               <a class="nav-link" href="../upload.php">Upload</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../web/viewer.php">Highlight</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../wordweb.php">Word Web</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="../sets.php">My Sets</a>
             </li>
           </ul>

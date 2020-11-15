@@ -13,7 +13,6 @@
 <?php include 'includes/include_nav.php';?>
 
 
-
 <div class="container">
 <h1>Welcome to QuickCard</h1>
 <hr>
@@ -21,10 +20,10 @@
 <div class="row">
   <div class="col-6 col-sm-6">
     <h3> What We Do</h3>
-    <p>We make flashcards for you. You just highlight the relvent content</p>
+    <p>We make flashcards for you. You just highlight the relevant content.</p>
     <br>
     <h3>Who We Are</h3>
-    <p>We are a group college pauper looking to make good content for you</p>
+    <p>We are a group college students trying to make studying for test easier</p>
     <br>
   </div>
   <div class="col-6 col-sm-6">
@@ -43,3 +42,12 @@
 
 </body>
 </html>
+<style>
+            <style>
+	html {
+  height:100% !important;
+}
+
+body {
+  background: linear-gradient(324deg, rgba(36,34,84,0.5) 0%, rgba(50,75,154,0.5) 35%, rgba(228,98,112,0.5) 100%);
+}

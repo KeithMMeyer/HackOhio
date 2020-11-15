@@ -82,10 +82,11 @@
             });
             
             function updateCard(index){
+                if(index=="temp") return updateLast("temp");
                 var info = { 
                     "term":$("#term"+index).html(),
                     "id":index,
-                    "def":$("#def"+index).html()
+                    "def":$("#def"+index).html(),
                 }
                 console.log(info);
                 var infoStr = JSON.stringify(info);
@@ -102,6 +103,29 @@
             }
             
             function updateLast(index){
+                $("#term"+index).attr("id","termcurr");
+                $("#def"+index).attr("id","defcurr");
+                index="curr";
+                $("#term"+index).attr("onblur","updateCard('curr')");
+                $("#def"+index).attr("onblur","updateCard('curr')");
+                
+                lastCard();
+                var info = { 
+                    "term":$("#term"+index).html(),
+                    "def":$("#def"+index).html()
+                }
+                console.log(info);
+                var infoStr = JSON.stringify(info);
+                $(document).ready(function() {
+                    $.ajax({
+                    type: "POST",
+                    url: "add_card.php",
+                    data: {info : infoStr}, 
+                    success: function(response){
+                        console.log(response)
+                    }
+                    });
+                });
             }
             
             function newCard(term, def, index){
@@ -111,7 +135,7 @@
             }
             
             function lastCard(){
-                let element = newCard("Type to add a new card.", "Type to add a new card.", cardList.length);
+                let element = newCard("Type to add a new card.", "Type to add a new card.", "temp");
                 
                 $("#listContainer").append(element);
             }
