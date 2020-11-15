@@ -15,7 +15,7 @@
 <a href="sets.php"><button type="button" class="btn btn-back btn-primary btn-md">< Back to Sets</button></a>
 <h1>Set Name</h1>
 
-<div class="container">
+<div class="container" style="padding: 5%;">
     <div class="row">
         <div class="col">
             <button type="button" class="btn btn-primary btn-sm btn-prev" onclick="findPrev()"><</button>
