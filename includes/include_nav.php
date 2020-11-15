@@ -16,6 +16,9 @@
               <a class="nav-link" href="/HackOhio/web/viewer.php">Highlight</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="/HackOhio/wordweb.php">Word Web</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="/HackOhio/sets.php">My Sets</a>
             </li>
           </ul>
