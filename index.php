@@ -8,6 +8,15 @@
 <title>QuickCard - Home</title>
 
 <?php include 'includes/include_BS.php';?>
+<style>
+html {
+  height:100%;
+}
+
+body {
+  background: linear-gradient(324deg, rgba(36,34,84,0.5) 0%, rgba(50,75,154,0.5) 35%, rgba(228,98,112,0.5) 100%);
+}
+</style>
 </head>
 <body>
 <?php include 'includes/include_nav.php';?>
@@ -20,7 +29,7 @@
 <div class="row">
   <div class="col-6 col-sm-6">
     <h3> What We Do</h3>
-    <p>We make flashcards for you. You just highlight the relevant content.</p>
+    <p>We make flashcards for you! Just upload an image and take notes from a PDF.</p>
     <br>
     <h3>Who We Are</h3>
     <p>We are a group college students trying to make studying for test easier</p>
@@ -42,11 +51,4 @@
 
 </body>
 </html>
-<style>
-	html {
-  height:100%;
-}
 
-body {
-  background: linear-gradient(324deg, rgba(36,34,84,0.5) 0%, rgba(50,75,154,0.5) 35%, rgba(228,98,112,0.5) 100%);
-}

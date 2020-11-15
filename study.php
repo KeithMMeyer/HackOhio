@@ -8,6 +8,15 @@
     
 <title>QuickCard - Study</title>
 <?php include 'includes/include_BS.php';?>
+<style>
+html {
+  height:100%;
+}
+
+body {
+  background: linear-gradient(324deg, rgba(36,34,84,0.5) 0%, rgba(50,75,154,0.5) 35%, rgba(228,98,112,0.5) 100%);
+}
+</style>
 </head>
 <body>
 <?php include 'includes/include_nav.php';?>
@@ -49,7 +58,7 @@
 
 <?php
     // php setID variable
-    $setID = 1;
+    $setID = 2;
     $cardArr = [];
 
     $sql = "SELECT cardQuestion, cardAnswer FROM card WHERE setID = " . $setID .";";

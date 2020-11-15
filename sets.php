@@ -19,10 +19,19 @@
 
         <title>QuickCard - Sets</title>
         <?php include 'includes/include_BS.php';?>
+        <style>
+	html {
+  height:100%;
+}
+
+body {
+  background: linear-gradient(324deg, rgba(36,34,84,0.5) 0%, rgba(50,75,154,0.5) 35%, rgba(228,98,112,0.5) 100%);
+}
+</style>
     </head>
     <body>
         <?php include 'includes/include_nav.php';?>
-        <div style="float:left; margin-right: 15px;">
+        <div style="float:left; margin-right: 15px;" >
             <ul class="list-group">
                 <li class="list-group-item">   Set 1   </li>
                 <li class="list-group-item">   Set 2   </li>
@@ -52,7 +61,7 @@
 
 <?php
     // php setID variable
-    $setID = 1;
+    $setID = 2;
     $cardTerms = [];
     $cardDefs = [];
 
@@ -112,11 +121,14 @@
                 $("#term"+index).attr("onblur","updateCard('curr')");
                 $("#def"+index).attr("onblur","updateCard('curr')");
                 
-                lastCard();
                 var info = { 
                     "term":$("#term"+index).html(),
-                    "def":$("#def"+index).html()
+                    "def":$("#def"+index).html(),
+                    "set":setId
                 }
+
+                lastCard();
+
                 console.log(info);
                 var infoStr = JSON.stringify(info);
                 $(document).ready(function() {
@@ -125,14 +137,15 @@
                     url: "add_card.php",
                     data: {info : infoStr}, 
                     success: function(response){
-                        console.log(response)
+                        console.log(response);
+                        location.reload();
                     }
                     });
                 });
             }
             
             function newCard(term, def, index){
-                let element = "<div class='card-group'><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable onblur=updateCard('" + index + "') id='term" + index + "'>" + term + "</p></div></div><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable onblur=updateCard('" + index + "') id='def" + index + "'>" + def + "</p></div></div></div>";
+                let element = "<div class='card-group'><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable onblur=updateCard('" + index + "') id='term" + index + "'>" + term + "</p></div></div><div class='card'><div class='card-body'><p class='card-text card-editable' role='textbox' contenteditable onblur=updateCard('" + index + "') id='def" + index + "'>" + def + "</p></div><p style='position: absolute; right: 20px; top: 5px; color: darkgray;'>X</p></div></div>";
                 //$("#listContainer").append(element);
                 return element;
             }

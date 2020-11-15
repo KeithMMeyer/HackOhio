@@ -3,7 +3,12 @@
 include 'includes/db_connection.php';
 
 $curl = curl_init();
-$word = "idiot";
+
+$info = json_decode($_POST['info'], true);
+$word = $info["term"];
+$isDel = $info["delete"];
+
+$setId = 2;
 
 curl_setopt_array($curl, [
 	CURLOPT_URL => "https://wordsapiv1.p.rapidapi.com/words/" . $word . "/definitions",
@@ -31,7 +36,16 @@ if ($err) {
 	echo "cURL Error #:" . $err;
 }
 
+if ($isDel == "false") {
     $definitions = json_decode($response, true);
     $def = $definitions['definitions'][0]['definition'];
-    print_r($def);
+	
+	$sql = "INSERT INTO card (setId, cardQuestion, cardAnswer) VALUES (" . $setId . ", '". $word . "', '" . $def . "');";
+
+	$result = mysqli_query($conn, $sql);
+} else {
+	$sql = "DELETE FROM card WHERE cardQuestion = '" . $word . "';";
+
+	$result = mysqli_query($conn, $sql);
+}
 ?>

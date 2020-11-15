@@ -395,7 +395,10 @@ See https://github.com/adobe-type-tools/cmap-resources
         </div> <!-- outerContainer -->
     </div>
 <div class="col-sm">
-    <div style="height: 100%; width: 100%; color:white;">
+    <div style="height:5%; float:right">
+<a href="../sets.php"><button type="button" class="btn btn-back btn-primary btn-md">Save and Export></button></a>
+</div>
+    <div style="height: 95%; width: 100%; color:white;">
         <textarea id="documentArea" style="height: 100%; width: 100%; resize: none; padding:5%"></textarea>
     </div>
 </div>
