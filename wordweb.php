@@ -30,12 +30,12 @@ body {
 	<div id="cloud" style="text-align: center; font-size: 1.8em; padding: 2%; background-color:rgba(0,0,0,0.3); border-radius:16px;">
 	</div>
 </div>
-
+<?php echo $_SESSION["webArray"];?>
 <script>
 // get words from textract or upload
-	let words = [
-"minute","miss","mission","model","modern","moment","money","month","more","morning","most","mother","mouth","move","movement","movie","Mr","Mrs","much","music","must","my","myself","name","nation","national","natural","nature","near","nearly","necessary","need","network","never","news","newspaper","next","nice","night","no","none","now","north","not","note","nothing","notice","now", "now", "now", "note"
-	];
+	
+	let words = <?php echo json_encode($arr);?>;
+
 
 	// get and store frequencies
 	let frequencies = {};

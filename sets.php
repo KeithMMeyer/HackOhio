@@ -35,7 +35,7 @@
         <div class="container">
             <div class="col-sm" >
                 <div class = "row">
-                    <h1>Set Name</h1>
+                    <h1>New Set</h1>
                 </div>
                 <div class = "row">
                     <a href="study.php"><button type="button" class="btn btn-back btn-primary btn-md">Study this Set ></button></a>
@@ -82,29 +82,23 @@
             });
             
             function updateCard(index){
-                var info = [ 
-                    index,
-                    cardList[index].term,
-                    cardList[index].def
-                ]
+                var info = { 
+                    "term":$("#term"+index).html(),
+                    "id":index,
+                    "def":$("#def"+index).html()
+                }
+                console.log(info);
                 var infoStr = JSON.stringify(info);
-                $.ajax({
+                $(document).ready(function() {
+                    $.ajax({
                     type: "POST",
-                    url: "",
+                    url: "update_set.php",
                     data: {info : infoStr}, 
-                    cache: false,
                     success: function(response){
-                        //cardList[index].term = $('#term' + index).html();
-                        //cardList[index].def = $('#def' + index).html();
+                        console.log(response)
                     }
+                    });
                 });
-
-                <?php
-                 $info = json_decode(stripslashes($_POST['info']));
-                 var_dump($info);
-                //$sql = "UPDATE card SET cardQuestion = ";
-                //$result = mysqli_query($conn, $sql);
-                ?>
             }
             
             function updateLast(index){

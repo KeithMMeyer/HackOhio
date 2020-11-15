@@ -21,10 +21,12 @@ $uploadOk = 0;
 <body>
     <?php include 'includes/include_nav.php';?>
     <div class="container">
+      <br>
+      <br>
         <div class="col-sm" >
             <div class = "row">
                 <form action="upload.php" method="post" enctype="multipart/form-data">
-                    Select image to upload:
+                    Select image to upload:	📂
                     <input type="file" name="fileToUpload" id="fileToUpload">
                     <br>
                     <input class="btn btn-primary" type="submit" value="Upload Image" name="submit">
@@ -41,13 +43,8 @@ $uploadOk = 0;
                       $uploadOk = 0;
                     }
                     ?>
-                </form>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
-<?php
+                    <br>
+                    <?php
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
@@ -65,6 +62,13 @@ if ($uploadOk == 0) {
     }
 }
 ?>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
 
 <!DOCTYPE html>
 <html>

@@ -15,7 +15,7 @@
 
 <div class = "container">
 <div class = "row">
-<h1>Set Name</h1>
+<h1>New Set</h1>
 </div>
 <div class = "row">
 <a href="sets.php"><button type="button" class="btn btn-back btn-primary btn-md">< Back to Sets</button></a>
