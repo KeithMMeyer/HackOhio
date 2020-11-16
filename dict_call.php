@@ -21,7 +21,7 @@ curl_setopt_array($curl, [
 	CURLOPT_CUSTOMREQUEST => "GET",
 	CURLOPT_HTTPHEADER => [
 		"x-rapidapi-host: wordsapiv1.p.rapidapi.com",
-		"x-rapidapi-key: f91be4675amshdfb0adfcfbcb882p19e804jsndcd607f971bc"
+		"x-rapidapi-key: key"
 	],
 ]);
 
