@@ -38,8 +38,9 @@ body {
             var encodeCards = <?php echo json_encode($final_words); ?>;
             var words = [];
             $.each(encodeCards, function(key, value) {
-                value = value.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
-                words.push(value);
+                value = value.replace(/[.,\/#!$?%\^&\*;:{}=\-_`~()]/g,"")
+                if(!parseInt(value))
+                    words.push(value);
             });
 
 	// get and store frequencies
